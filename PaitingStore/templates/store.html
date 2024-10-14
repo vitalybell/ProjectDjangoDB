@@ -1,0 +1,23 @@
+{% extends 'menu.html'%}
+<!--<!DOCTYPE html>-->
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Продажа картин</title>
+</head>
+<body>
+    {{block.super}}
+    {% block content %}
+    <h1>Выберите картину</h1>
+    <ul>
+        {% for painting in Painting %}
+        <h2>{{painting.title}},   {{painting.description}},
+            Цена     {{painting.cost}}, Размер картины   {{painting.size}}</h2>
+        <li>{{ release }}<button><a href="/basket">Выбрать</a></button></li>
+        {% endfor %}
+    </ul>
+    {% endblock %}
+    <button><a href="/main">Вернуться обратно</a></button>
+</body>
+</html>
+
